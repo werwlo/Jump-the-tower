@@ -170,7 +170,7 @@ if __name__ == "__main__":
                 if event.key == K_ESCAPE:
                     game == False
                     pygame.quit()
-        if blinks.value==1:
+        if blink.value==1:
             reinit()
 
     game = True
