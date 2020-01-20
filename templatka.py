@@ -156,6 +156,7 @@ if __name__ == "__main__":
             if player.on_any_platform(platform_controller, floor):
                 if player.speed_y >= JUMP_SPEED/2:
                     player.speed_y = -JUMP_SPEED
+        blink.value = 0
 
     def game_over():
         window = pygame.display.set_mode((W, H))
@@ -172,6 +173,7 @@ if __name__ == "__main__":
                     pygame.quit()
         if blink.value==1:
             reinit()
+        blink.value = 0
 
     game = True
     #game loop
@@ -199,21 +201,6 @@ if __name__ == "__main__":
             clock.tick(fps)
 
 
-    win = visual.Window(
-        size=[500, 500],
-        units="pix",
-        fullscr=False
-    )
-
-    while True:
-        if blink.value == 1:
-            print('BLINK!')
-            blink.value = 1
-        if 'escape' in event.getKeys():
-            print('quitting')
-            quit_program.set()
-        if quit_program.is_set():
-            break
 
 # Zakończenie podprocesów
     proc_blink_det.join()
