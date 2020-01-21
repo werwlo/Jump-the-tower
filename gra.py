@@ -156,7 +156,7 @@ if __name__ == "__main__":
             if player.on_any_platform(platform_controller, floor):
                 if player.speed_y >= JUMP_SPEED/2:
                     player.speed_y = -JUMP_SPEED
-        blink.value = 0
+            blink.value = 0
 
     def game_over():
         window = pygame.display.set_mode((W, H))
@@ -173,7 +173,7 @@ if __name__ == "__main__":
                     pygame.quit()
         if blink.value==1:
             reinit()
-        blink.value = 0
+            blink.value = 0
 
     game = True
     #game loop
